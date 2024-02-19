@@ -1,5 +1,7 @@
 package com.example.jetapckcomposeexample01
 
+import android.content.res.Configuration
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -132,7 +134,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 /**
  * 소형 스마트폰의 일반적인 너비인 320dp를 기준으로 미리보기를 생성
  */
-@Preview(showBackground = true, widthDp = 320)
+@Preview(
+    showBackground = true,
+    uiMode = UI_MODE_NIGHT_YES,
+    widthDp = 320)
 @Composable
 fun GreetingPreview() {
     JetapckComposeExample01Theme {
