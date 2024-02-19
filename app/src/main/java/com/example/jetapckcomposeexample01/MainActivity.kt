@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -46,7 +47,9 @@ class MainActivity : ComponentActivity() {
 fun MyApp(
     modifier: Modifier = Modifier
 ) {
-    var shouldShowOnboarding by remember { mutableStateOf(true) }
+    // saveable state -> 화면 회전 등에도 상태를 유지
+//    var shouldShowOnboarding by remember { mutableStateOf(true) }
+    var shouldShowOnboarding by rememberSaveable { mutableStateOf(true) }
 
     Surface(modifier = modifier) {
         if (shouldShowOnboarding) {
